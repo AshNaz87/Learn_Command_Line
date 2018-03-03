@@ -1,0 +1,2 @@
+1) Run `less` on curl.txt. Go down four pages and go back up four pages. Go to the end of the file and then to the beginning of the file and quit the program.
+2) Using `less` and `/`, search for the word "the" and see if there is more than one match.

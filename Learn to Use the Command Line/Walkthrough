@@ -1,0 +1,237 @@
+Welcome to the Learn How to Use the Command Line Tutorial
+
+Ask Windows users to install Git for Windows
+
+Why hold a tutorial on the command line?
+
+1) Run complex commands from a command line interface (CLI for short)
+2) Execute tasks simultaneously
+3) If you are working with developers, you can converse in the same "language"
+4) Can be quicker than working with a GUI (Graphical User Interface)
+5) Essential if you want to be a compotent developer
+
+***May be other things that I have missed out on***
+
+What we will cover today will cover the basics of the Unix command line.
+
+Unix refers to a family of operating systems, including MacOS, Linux, Ubuntu and Android.
+
+Why the Unix command line and not the Command Prompt/Powershell?
+
+1) Because I'm not familiar with it :)
+2) You are likely to issue commands on a Unix server at some point, using the `ssh` command. At some point, we will also go through using Git, which is a version control system (and is probably the most popular choice amongst developers)
+
+1 Fundamentals
+
+First command
+
+It will be used to print into the screen and is `echo`.
+
+At the prompt, print out `echo Hello World` (don't use backticks here; this is typically used in applications to refer to code)
+
+Now try entering other arguments (by arguments, here I mean words of your choice)
+
+What if we were to use quotation marks?
+
+`echo "Coding is great!"`
+
+And single quotation marks?
+
+`echo "Will this work?"`
+
+Are there any differences in what is being returned?
+
+**Do not read before Exercise 1**
+If you forget to include the closing quotation mark, you should see an angle bracket on the next line (appears like this ">"). You can still get the argument printed to the screen by including the closing quotation mark on the next line.
+
+Typically, whenever you get into trouble and want to exit a program or state, think of hitting `Ctrl + C`. Sometimes in applications, you may see the 'control' button being written as `^`. This is just convention (they are essentially the same thing). Do not confuse `^` with `⇧` (which is the "shift" button).
+
+The technical term for the command line is shell and features an incredibly useful tool to learn more about the available commands. The command is `man`, which is short for "manual."
+
+So for example, if we were to type in `man echo` and hit return we would get a page which would give us more information about the command.
+
+Notice when you scroll to the bottom of the page you will notice a colon, `:`. This indicates that there is more information below. The man pages uses an interface called `less`, which we will learn about a little later.
+
+Exit the program by hitting `q`, which stands for quit.
+
+Interestingly enough, we can also learn about the manual by typing in `man man`. Go ahead and try it. What do you find?
+
+A really useful method used to reuse a command or to change we have typed in previously, is the "up arrow" ↑. You can continue to roll back up on your previous commands. Likewise, pressing the "down arrow" key ↓, will enable you to go down your command chain.
+
+Now suppose you have typed something in the shell and have just realised that you actually forgot to type in the command preceding it:
+
+`alias ll="ls -l"`
+
+You could keep hitting the left arrow until you get to the beginning of the line. You may be wondering if there is a shortcut? There actually is. 
+
+Type in `Ctrl + A` and hit return. You can now type the command in at the beginning of the line you want to execute:
+
+`echo alias ll="ls -l"`
+
+To execute the command, your cursor doesn't need to be at the very end. You can hit return from anywhere on the line. (provided there is nothing incorrect about your command).
+
+Similarly, if you wanted the cursor to go to the end of the line, type in `Ctrl + E`.
+
+There are times where you want to delete everything on the line. If your cursor is at the end, you can type `Ctrl + U` to clear everything on the line. If it is at the beginning, type in `Ctrl + K` to clear the line.
+
+Play around in the terminal to get a feel for the shortcuts in clearing text.
+
+Now, you might be thinking what if I wanted to edit some long command I have wrote somewhere halfway. Do I have to keep hitting the arrow keys or see if what I want to edit is closer to the beginning or end of the line?
+
+Well, there is actually a way to get more precision. If you hold down `alt` (usually written as `opt`), you can use your mouse to identify where you want the cursor to be. Let's take a look at the example below:
+
+`echo 'I actually want to edit THIS, so that it is all lower case text'`.
+
+Let's use `alt` and left click to the word we want to edit and successfully amend it.
+
+You may notice your screen clogging up and by now I'm sure you realise there's a command for clearing everything on your screen. It's conveniently named `clear`. Pressing `Ctrl + L` will do the same thing.
+
+When you have finished with a terminal window, there are a few ways of exiting:
+
+1) `exit` (you may have to change some settings)
+2) `Ctrl + D`
+3) `Ctrl + W` for a tab or `⇧ + Ctrl + W` for a window
+
+2 Managing files 
+
+Now, I'd like to find out what directory you are currently in. To do so run `pwd`. You can think of a directory as a folder.
+
+If you're not in it already, I would like you to find out how to make your Desktop current directory.
+
+Let's see what else we can do with the `echo command`. 
+
+Type in the following 
+
+`echo "I find that the harder I work, the more luck I seem to have." > quotes.txt`
+
+You may have noticed a file pop up in your Desktop, which is the file you have created.
+
+Here the `>`, or the "redirect operator", redirects the text into a .txt file. 
+
+Let's check if the content is what we have written. Run the command `cat quotes.txt`
+
+How about were we to add another quote into the file? We can do so with `>>`, or the append operator.
+
+Run `echo "Each problem that I solved became a rule which served afterwards to solve other problems." >> quotes.txt` and run the previous command to output the contents of the file into the screen.
+
+One of the most frequently typed commands is `ls`, which stands for list.
+
+Let's see what's on our desktop. Type `ls` and you should see all the files and directories in your current directory (barring hidden files).
+
+We can use the wildcard character ("*") to list all files, ending in a particular format:
+
+`ls *.txt` - This will show us all files ending in ".txt".
+
+The `ls` command also has many useful options. One of the is `-l`. Combined, we get `ls -l` (long form).
+
+This will return user permissions, a date and time. The number before the date is the size of the file in bytes.
+
+(mention that with options, you can amalgamate them into one before you go into the next step)
+
+Another variant is `ls -rtl`, which will return the long form of each file or directory in order of how recently it was modified.
+This is handy when there are lots of files in a directory but you only care about seeing the ones that have been modified recently, such as a file download.
+
+Hidden files and directories are preceded by a period, ".". Let's now create one, using the redirect operator - `echo > .gitignore`. As expected, if we type `ls`, the file will not show up. To do so, we will have to use another option `- a`, with the full command being `ls -a.`
+
+Not to mention, we can create files using the `touch` command, instead of using echo and the `>` operator:
+
+`touch coding.txt`
+
+You can also rename files using the `mv` command (which is short for move):
+
+`echo 'foo bar' > foo_bar`
+`mv foo_bar foo_bar.txt`
+
+The `mv` command can also move files, which we will explore later.
+
+We can copy files using the `cp` command:
+
+`cp foo_bar.txt baz_qux.txt`
+
+In addition, we can remove files using the `rm` command:
+
+`rm baz_qux.txt`
+
+When prompted to remove the file, enter "y".
+
+To bypass the prompt and if you are really sure you want to delete the file enter the command `rm -f`, which forcibly removes it. Only enter this if you are sure you want to remove the file:
+
+`rm -f foo_bar.txt`
+
+3 Inspecting Files
+
+Downloading files from the internet is possible, using the `curl` command (also written as "cURL").
+
+To make sure the command is available on your system, type in `which curl`
+
+If you do have it available, you should see the exact location of your file.
+
+Let's now download the html content from the curl website and redirect it into a text file of our own:
+
+`curl -L https://curl.haxx.se/ > curl.txt`
+
+(Quick tips on two shebangs to run the previous command and !<command> to run the last command which featured itself. 
+
+A powerful way to interactively search through your previous commands is through `Ctrl + R` and then type what it is you want to search.
+
+We can further find the word count of a particular file using `wc`:
+
+`wc curl.txt`
+
+What returns is the number of lines, the word count and the number of bytes for the file.
+
+An amazing command which also computes to an interface is `less`. There is another variant called `more`, but ironically `less` does more :)
+
+`less curl.txt`
+
+Here, you can navigate through the file a number of ways:
+
+`Ctrl + F` - move one page forward
+`Ctrl + B` - move one page backward
+`Ctrl + J` - move one line down
+`Ctrl + K` - move one line up
+
+`/` - will let you search through a file (sort of like finding word in a document using `Ctrl + F`).
+
+When searching through a file `N` will navigate you to the next match and `⇧ + N` will navigate you to the previous match.
+
+`G` - will navigate you to the end of the file
+`1G` - will navigate you to the beginning of the file
+`Q` - will quit the Less interface
+
+An interesting point is that `man` uses the `less` interface, so you can apply to these methods to a `man` page. Have a go!
+
+Another incredibly useful command is `grep`. Its most common use is to search for a substring in a file. So for instance we could do `grep '</div>' curl.txt` and what will print out on the screen are all the occurences of closing div tags in the file.
+
+Have you ever thought about combining commands? We can also do this by using the `|` or pipe operator.
+
+So with the example above, we could do `grep '</div>' curl.txt | wc` to find out how many closing div tags there are.
+
+We will be talking about using `grep` more later.
+
+4 Directory Composition
+
+When we refer to directories, you will often hear the term "root" directory. This is the slash, "/", e.g. in `/usr/local/bin`, `/` will be the root directory. All other directories are subdirectories of the root directory.
+
+The most important directory is the home directory (not quite sure what it is in Windows).
+
+We can create directories using the `mkdir` command. Let's do this:
+
+`mkdir experiments`
+
+Let's now go into this directory using the `cd` command:
+
+`cd experiments`
+
+To confirm you are in the correct directory, run `pwd`.
+
+The command for moving up one directory is `cd ..`. This is pretty useful when there are multiple directories, or if you are working in a project (something we will see more of in the upcoming events).
+
+If you just type in `cd` you should go back into your home directory.
+
+Closely related to ".." is ".", which refers to the current directory. The most common use would be to move or copy files into the current directory (Go through some examples in class).
+
+`.` can also be used with the command `find`. Suppose we want to find all files ending with ".txt". Let's try this:
+
+
+

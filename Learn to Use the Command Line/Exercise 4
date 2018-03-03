@@ -1,0 +1,25 @@
+1) Using `echo` and the redirect operator, make a file called "foo.txt", which contains the words "Happy coding!".
+
+    Then use `cp` to copy the file as "bar.txt"
+    
+    Use `diff` to make sure both contents are the same.
+
+2) Do the same thing as above, using the `cat` command (on foo.txt) and redirect operator. Call the new file "baz.txt".
+
+3) Create a file named quux.txt containing both contents from "foo.txt" and "bar.txt"
+
+    *Hint* Use the `cat` command
+    
+4) Type the sequence of commands needed to create an empty file called "alpha", rename it to "beta" and then copy it to "gamma".
+
+5) Don't type this in the terminal, but what do you think the command would be to remove all files which start with "b"? (remember the wilcard operator, "*")
+
+6) Use the command `curl -I https://curl.haxx.se/` to fetch the HTTP header.
+
+7) The `history` command prints the history of commands in a particular terminal shell. Pipe `history` to `less` to examine your command history. What was your 25th command?
+
+8) By piping the output of history to wc, count how many commands you’ve executed so far.
+
+9) What do the `-O` and `-L` options in Listing 10 mean? Hint: Pipe the output of `curl -h` to less and search first for the string `-O` and then for the string `-L`.
+    
+    

@@ -1,0 +1,11 @@
+1) What does the command `cat` stand for?
+
+2) What does concatenate mean?
+
+3) Using the up arrow, print to the screen the following words (in programming anything wrapped around quotation marks, single or double, are known as `strings`), 'inni', 'minni', 'minie', 'mo', without retyping `echo` each time.
+
+4) Type in a long command of your own. Now using `Opt` + left click, select some some text and modify it. Do this a couple of times, until you get a feel of how this works.
+
+5) Experiment and find a way to print out `Use "man clear"` onto the screen. Remember the key to get out of trouble if something unexpected happens :)
+
+6) Execute the command `man sleep` and figure out how to make the terminal "sleep" for 10 seconds.

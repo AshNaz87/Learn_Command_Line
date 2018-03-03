@@ -1,0 +1,17 @@
+1) Copy some quotes or things of interest to you and using `echo` and `>`, make files called file_1.txt and file_2.txt.
+
+2) Replicate the original file (quotes.txt), by first redirecting the contents of file_1.txt and then append the contents of file_2.txt into a file called quotes_copy.txt. 
+
+    Using the command `diff` we can check to see if the contents of the files are the same. Find out how to do this.
+
+    *Hint* If nothing is outputted, this means that there is the two files are the same.
+
+3) Using `cat`, combine the contents of file_1.txt and file_2.txt in reverse order using a single command, into a file called quotes_reversed.txt. 
+
+4) What's the command to list all hidden files which start with "p"?
+
+5) What's the command to list all files which contain "the", using long form and in reverse modification time?
+
+    *Hint* For the argument, use a wildcard before and after, **<argument>**.
+
+6) What is the command to list all hidden files in reverse modification time, in long form?
